@@ -46,21 +46,35 @@ namespace CouponRestAPI
             //use MockCouponRepo 
             //services.AddScoped<ICouponRepo, MockCouponRepo>();
 
-            //use MongoCommanderRepo 
+            //use MongoCouponRepo 
             services.AddScoped<ICouponRepo, MongoCouponRepo>();
 
-            //use SQLCommanderRepo 
-            //services.AddScoped<ICouponRepo, SQLCouponRepo>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "CouponAPI",
+                    Version = "v1",
+                    Description = "A simple coupon rest api",
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            //swagger ui path: https://localhost:44330/swagger/index.html       
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CouponAPI");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
