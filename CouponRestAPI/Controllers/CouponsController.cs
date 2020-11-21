@@ -50,7 +50,7 @@ namespace CouponRestAPI.Controllers
         }
 
         // POST api/coupons 
-        [Authorize(Policy = Policies.User)]
+      //  [Authorize(Policy = Policies.User)]
         [HttpPost()]
         public ActionResult<CouponReadDto> CreateCoupon(CouponCreateDto couponCreateDto)
         {
@@ -60,7 +60,7 @@ namespace CouponRestAPI.Controllers
         }
 
         // PUT api/coupons/{id}
-        [Authorize(Policy = Policies.User)]
+       // [Authorize(Policy = Policies.User)]
         [HttpPut("{id}")]
         public ActionResult UpdateCoupon(string id, CouponUpdateDto couponUpdateDto)
         {
@@ -80,7 +80,7 @@ namespace CouponRestAPI.Controllers
         }
 
         // PATCH api/coupons/{id}
-        [Authorize(Policy = Policies.User)]
+      //  [Authorize(Policy = Policies.User)]
         [HttpPatch("{id}")]
         public ActionResult PartialUpdateCoupon(string id, JsonPatchDocument<CouponUpdateDto> patchDocument)
         {
@@ -109,7 +109,7 @@ namespace CouponRestAPI.Controllers
 
         // DELETE api/coupons/{id}
         [HttpDelete("{id}")]
-        [Authorize(Policy = Policies.User)]
+      //  [Authorize(Policy = Policies.User)]
         public ActionResult DeleteCoupon(string id)
         {
             var couponModelFromRepo = _repository.GetCouponById(id);
