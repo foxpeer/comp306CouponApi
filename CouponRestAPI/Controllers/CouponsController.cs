@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CouponRestAPI.Controllers
 {
     [Route("api/coupons")]
-    [ApiController]
+    [ApiController]   
     public class CouponsController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -27,7 +27,8 @@ namespace CouponRestAPI.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/coupons
+        // GET: api/coupons     
+
         [HttpGet]
         public ActionResult<IEnumerable<CouponReadDto>> GetAllCoupons()
         {
@@ -47,7 +48,8 @@ namespace CouponRestAPI.Controllers
             return Ok(_mapper.Map<CouponReadDto>(coupon));
         }
 
-        // POST api/coupons       
+        // POST api/coupons 
+       // [Authorize]
         [HttpPost()]
         public ActionResult<CouponReadDto> CreateCoupon(CouponCreateDto couponCreateDto)
         {

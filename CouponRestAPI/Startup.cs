@@ -30,6 +30,7 @@ namespace CouponRestAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.Configure<CouponApiSettings>(
                 Configuration.GetSection(nameof(CouponApiSettings)));
 
@@ -63,6 +64,12 @@ namespace CouponRestAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             app.UseSwagger();
             //swagger ui path: https://localhost:44330/swagger/index.html       
             app.UseSwaggerUI(c =>
@@ -74,7 +81,7 @@ namespace CouponRestAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+          
             app.UseHttpsRedirection();
 
             app.UseRouting();
