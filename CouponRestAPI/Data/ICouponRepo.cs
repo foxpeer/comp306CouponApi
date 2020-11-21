@@ -9,6 +9,7 @@ namespace CouponRestAPI.Data
 {
     public interface ICouponRepo
     {
+        
         IEnumerable<Coupon> GetAllCoupons();
         IEnumerable<Coupon> GetCouponByStore(string storename);
         Coupon GetCouponById(string id);

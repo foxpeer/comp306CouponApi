@@ -15,6 +15,9 @@ using CouponRestAPI.Models;
 using CouponRestAPI.Data;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace CouponRestAPI
 {
@@ -59,6 +62,31 @@ namespace CouponRestAPI
                     Description = "A simple coupon rest api",
                 });
             });
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+           .AddJwtBearer(options =>
+           {
+               options.RequireHttpsMetadata = false;
+               options.SaveToken = true;
+               options.TokenValidationParameters = new TokenValidationParameters
+               {
+                   ValidateIssuer = true,
+                   ValidateAudience = true,
+                   ValidateLifetime = true,
+                   ValidateIssuerSigningKey = true,
+                   ValidIssuer = Configuration["Jwt:Issuer"],
+                   ValidAudience = Configuration["Jwt:Audience"],
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SecretKey"])),
+                   ClockSkew = TimeSpan.Zero
+               };
+
+           });
+
+            services.AddAuthorization(config =>
+            {
+                config.AddPolicy(Policies.Admin, Policies.AdminPolicy());
+                config.AddPolicy(Policies.User, Policies.UserPolicy());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +99,7 @@ namespace CouponRestAPI
                 .AllowAnyHeader());
 
             app.UseSwagger();
-            //swagger ui path: https://localhost:44330/swagger/index.html       
+            //swagger ui path: https://localhost:5000/swagger/index.html       
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CouponAPI");
@@ -82,10 +110,10 @@ namespace CouponRestAPI
                 app.UseDeveloperExceptionPage();
             }
           
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
