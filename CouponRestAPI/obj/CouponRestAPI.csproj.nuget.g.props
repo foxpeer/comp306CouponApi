@@ -22,5 +22,8 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">C:\Users\foxpe\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0</PkgMicrosoft_Extensions_ApiDescription_Server>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\foxpe\.nuget\packages\awssdk.core\3.5.1.40</PkgAWSSDK_Core>
+    <PkgAWSSDK_SecurityToken Condition=" '$(PkgAWSSDK_SecurityToken)' == '' ">C:\Users\foxpe\.nuget\packages\awssdk.securitytoken\3.5.1.20</PkgAWSSDK_SecurityToken>
+    <PkgAWSSDK_DynamoDBv2 Condition=" '$(PkgAWSSDK_DynamoDBv2)' == '' ">C:\Users\foxpe\.nuget\packages\awssdk.dynamodbv2\3.5.1.2</PkgAWSSDK_DynamoDBv2>
   </PropertyGroup>
 </Project>

@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Amazon.DynamoDBv2.DataModel;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -9,18 +10,19 @@ namespace CouponRestAPI.Models
 {
     public class Coupon
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [DynamoDBProperty("id")]
+        [DynamoDBHashKey]
         public string Id { get; set; }
-        [BsonRequired]
+
+        [DynamoDBProperty("CouponCode")]
         public string CouponCode { get; set; }
-        [BsonRequired]
+        [DynamoDBProperty("StoreName")]
         public string StoreName { get; set; }
-        [BsonRequired]
+        [DynamoDBProperty("ItemName")]
         public string ItemName { get; set; }
-        [BsonRequired]
+        [DynamoDBProperty("OriginalPrice")]
         public decimal OriginalPrice { get; set; }
-        [BsonRequired]
+        [DynamoDBProperty("DiscountPercentage")]
         public decimal DiscountPercentage { get; set; }
      /*   public DateTime ExpiredTime { get; set; }
         public DateTime CreatedTime { get; set; }

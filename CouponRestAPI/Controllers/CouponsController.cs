@@ -21,6 +21,7 @@ namespace CouponRestAPI.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ICouponRepo _repository;
+      
         //constructor
         public CouponsController(ICouponRepo repository, IMapper mapper)
         {

@@ -9,13 +9,13 @@ namespace CouponRestAPI.Data
 {
     public interface ICouponRepo
     {
-        
-        IEnumerable<Coupon> GetAllCoupons();
-        IEnumerable<Coupon> GetCouponByStore(string storename);
-        Coupon GetCouponById(string id);
-        Coupon CreateCoupon(Coupon coupon);
-        void UpdateCoupon(string id, Coupon coupon);
-        void DeleteCoupon(Coupon coupon);
+
+         Task<IEnumerable<Coupon>> GetAllCoupons();
+         Task<IEnumerable<Coupon>> GetCouponByStore(string storename);
+         Task<Coupon> GetCouponById(string id);
+         Task<Coupon> CreateCoupon(Coupon coupon);
+         Task<Coupon> UpdateCoupon(string id, Coupon coupon);
+         Task DeleteCoupon(Coupon coupon);
 
     }
 }

@@ -51,7 +51,12 @@ namespace CouponRestAPI
             //services.AddScoped<ICouponRepo, MockCouponRepo>();
 
             //use MongoCouponRepo 
-            services.AddScoped<ICouponRepo, MongoCouponRepo>();
+           // services.AddScoped<ICouponRepo, MongoCouponRepo>();
+
+
+            //use DynamoCouponRepo 
+            services.AddScoped<ICouponRepo, DynamoCouponRepo>();
+
 
             services.AddSwaggerGen(c =>
             {
@@ -59,7 +64,7 @@ namespace CouponRestAPI
                 {
                     Title = "CouponAPI",
                     Version = "v1",
-                    Description = "A simple coupon rest api",
+                    Description = "COMP306GroupProject- Coupon Api By Liping Wu and Xinglong Lu",
                 });
             });
 
