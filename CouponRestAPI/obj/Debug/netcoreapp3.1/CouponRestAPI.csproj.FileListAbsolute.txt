@@ -8,11 +8,6 @@ D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponR
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.RazorTargetAssemblyInfo.cache
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\staticwebassets\CouponRestAPI.StaticWebAssets.Manifest.cache
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\staticwebassets\CouponRestAPI.StaticWebAssets.xml
-D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.AssemblyInfoInputs.cache
-D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.AssemblyInfo.cs
-D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.csproj.CoreCompileInputs.cache
-D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.MvcApplicationPartsAssemblyInfo.cs
-D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\appsettings.json
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -71,6 +66,11 @@ D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponR
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.AssemblyInfoInputs.cache
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.AssemblyInfo.cs
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.csproj.CoreCompileInputs.cache
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.RazorTargetAssemblyInfo.cache
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.csproj.CopyComplete
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\staticwebassets\CouponRestAPI.StaticWebAssets.Manifest.cache

@@ -20,21 +20,21 @@ namespace CouponRestAPI.Data
     public class CouponService : IDynamoDBServices
     {
         //when use DynamoDb
-        private AmazonDynamoDBClient dynamoDBClient { get; set; }
-        private string tableName = "Coupons";
+        private IAmazonDynamoDB dynamoDBClient { get; set; }
+        private string tableName = "Coupon";
         private readonly ILogger<CouponService> _logger;
         //constructor
         public CouponService(
-            AmazonDynamoDBClient client, 
+            IAmazonDynamoDB dynamoDBClient,
             ILogger<CouponService> logger)
         {
-            this.dynamoDBClient = client;
+            this.dynamoDBClient = dynamoDBClient;
             this._logger = logger;
         }
 
         private async void CreateTable()
         {
-            AmazonDynamoDBClient client = dynamoDBClient;
+            IAmazonDynamoDB client = dynamoDBClient;
             var tableResponse = await client.ListTablesAsync();
             if (!tableResponse.TableNames.Contains(tableName))
             {
@@ -60,6 +60,7 @@ namespace CouponRestAPI.Data
                         new AttributeDefinition { AttributeName = "id", AttributeType=ScalarAttributeType.S }
                     }
                 });
+                Thread.Sleep(1000);
 
                 bool isTableAvailable = false;
                 while (!isTableAvailable)
