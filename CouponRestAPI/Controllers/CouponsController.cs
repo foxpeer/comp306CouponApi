@@ -32,17 +32,17 @@ namespace CouponRestAPI.Controllers
         // GET: api/coupons     
 
         [HttpGet]
-        public ActionResult<IEnumerable<CouponReadDto>> GetAllCoupons()
+        public async Task<ActionResult<IEnumerable<CouponReadDto>>> GetAllCoupons()
         {
-            var coupons = _repository.GetAllCoupons();
-            return Ok(_mapper.Map<IEnumerable<CouponReadDto>>(coupons));
+            var coupons = await _repository.GetAllCoupons();
+            return Ok( _mapper.Map<IEnumerable<CouponReadDto>>(coupons));
         }
 
         // GET api/coupons/5
         [HttpGet("{id}", Name= "GetCoupon")]
-        public ActionResult<CouponReadDto> GetCouponById(string id)
+        public async Task<ActionResult<CouponReadDto>> GetCouponById(string id)
         {
-            var coupon = _repository.GetCouponById(id);
+            var coupon = await _repository.GetCouponById(id);
             if (coupon == null)
             {
                 return NotFound();
@@ -53,19 +53,19 @@ namespace CouponRestAPI.Controllers
         // POST api/coupons 
       //  [Authorize(Policy = Policies.User)]
         [HttpPost()]
-        public ActionResult<CouponReadDto> CreateCoupon(CouponCreateDto couponCreateDto)
+        public async Task<ActionResult<CouponReadDto>> CreateCoupon(CouponCreateDto couponCreateDto)
         {
-            var couponModel = _mapper.Map<Coupon>(couponCreateDto);
-            var coupon = _repository.CreateCoupon(couponModel);
+            var couponModel =  _mapper.Map<Coupon>(couponCreateDto);
+            var coupon =await _repository.CreateCoupon(couponModel);
             return CreatedAtRoute("GetCoupon", new { id = coupon.Id.ToString()  }, _mapper.Map<CouponReadDto>(coupon));
         }
 
         // PUT api/coupons/{id}
        // [Authorize(Policy = Policies.User)]
         [HttpPut("{id}")]
-        public ActionResult UpdateCoupon(string id, CouponUpdateDto couponUpdateDto)
+        public async Task<ActionResult> UpdateCoupon(string id, CouponUpdateDto couponUpdateDto)
         {
-            var couponModelFromRepo = _repository.GetCouponById(id);
+            var couponModelFromRepo =await _repository.GetCouponById(id);
 
             if (couponModelFromRepo == null)
             {
@@ -74,25 +74,25 @@ namespace CouponRestAPI.Controllers
 
             _mapper.Map(couponUpdateDto, couponModelFromRepo);
 
-            _repository.UpdateCoupon(id, couponModelFromRepo);
+            await _repository.UpdateCoupon(id, couponModelFromRepo);
 
-            var coupon = _repository.GetCouponById(id);
+            var coupon = await _repository.GetCouponById(id);
             return Ok(_mapper.Map<CouponReadDto>(coupon));
         }
 
         // PATCH api/coupons/{id}
       //  [Authorize(Policy = Policies.User)]
         [HttpPatch("{id}")]
-        public ActionResult PartialUpdateCoupon(string id, JsonPatchDocument<CouponUpdateDto> patchDocument)
+        public async Task<ActionResult> PartialUpdateCoupon(string id, JsonPatchDocument<CouponUpdateDto> patchDocument)
         {
-            var couponModelFromRepo = _repository.GetCouponById(id);
+            var couponModelFromRepo =await _repository.GetCouponById(id);
 
             if (couponModelFromRepo == null)
             {
                 return NotFound();
             }
 
-            var couponToPatch = _mapper.Map<CouponUpdateDto>(couponModelFromRepo);
+            var couponToPatch =  _mapper.Map<CouponUpdateDto>(couponModelFromRepo);
             patchDocument.ApplyTo(couponToPatch, (Microsoft.AspNetCore.JsonPatch.Adapters.IObjectAdapter)ModelState);
 
             if (!TryValidateModel(couponToPatch))
@@ -102,25 +102,25 @@ namespace CouponRestAPI.Controllers
 
             _mapper.Map(couponToPatch, couponModelFromRepo);
 
-            _repository.UpdateCoupon(id, couponModelFromRepo);
+            await _repository.UpdateCoupon(id, couponModelFromRepo);
 
-            var coupon = _repository.GetCouponById(id);
+            var coupon = await _repository.GetCouponById(id);
             return Ok(_mapper.Map<CouponReadDto>(coupon));
         }
 
         // DELETE api/coupons/{id}
         [HttpDelete("{id}")]
       //  [Authorize(Policy = Policies.User)]
-        public ActionResult DeleteCoupon(string id)
+        public async Task<ActionResult> DeleteCoupon(string id)
         {
-            var couponModelFromRepo = _repository.GetCouponById(id);
+            var couponModelFromRepo = await _repository.GetCouponById(id);
 
             if (couponModelFromRepo == null)
             {
                 return NotFound();
             }
 
-            _repository.DeleteCoupon(couponModelFromRepo);
+            await _repository.DeleteCoupon(couponModelFromRepo);
 
             return NoContent();
         }

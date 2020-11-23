@@ -1,4 +1,5 @@
-﻿using Amazon.DynamoDBv2;
+﻿using Amazon;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
@@ -16,25 +17,24 @@ namespace CouponRestAPI.Data
 {
 
 
-    public class CouponService 
+    public class CouponService : IDynamoDBServices
     {
         //when use DynamoDb
         private AmazonDynamoDBClient dynamoDBClient { get; set; }
-        DynamoDBContext context;
         private string tableName = "Coupons";
         private readonly ILogger<CouponService> _logger;
         //constructor
-        public CouponService(AmazonDynamoDBClient client, 
-            DynamoDBContext context, ILogger<CouponService> logger)
+        public CouponService(
+            AmazonDynamoDBClient client, 
+            ILogger<CouponService> logger)
         {
             this.dynamoDBClient = client;
-            this.context = new DynamoDBContext(client);
             this._logger = logger;
         }
 
-        public async void CreateTable()
+        private async void CreateTable()
         {
-            AmazonDynamoDBClient client = new AmazonDynamoDBClient();            
+            AmazonDynamoDBClient client = dynamoDBClient;
             var tableResponse = await client.ListTablesAsync();
             if (!tableResponse.TableNames.Contains(tableName))
             {
@@ -84,7 +84,7 @@ namespace CouponRestAPI.Data
             return await context.LoadAsync<Coupon>(coupon.Id, default(System.Threading.CancellationToken));
         }
 
-        public async Task<Coupon> Update(Coupon coupon)
+        public async Task<Coupon> Update(string id, Coupon coupon)
         {
             CreateTable();
             Coupon found = await Get(coupon.Id);
@@ -99,11 +99,11 @@ namespace CouponRestAPI.Data
             return await context.LoadAsync<Coupon>(found.Id, default(System.Threading.CancellationToken));
         }
 
-        public async Task Delete(string Id)
+        public async Task Delete(Coupon coupon)
         {
             CreateTable();
             DynamoDBContext context = new DynamoDBContext(dynamoDBClient);
-            await context.DeleteAsync<Coupon>(Id, default(System.Threading.CancellationToken));
+            await context.DeleteAsync<Coupon>(coupon.Id, default(System.Threading.CancellationToken));
 
         }
 
@@ -156,7 +156,6 @@ namespace CouponRestAPI.Data
 
             return documentList;
         }
-
 
 
         //when use mongodb

@@ -4,18 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Amazon.DynamoDBv2;
+using Microsoft.Extensions.Logging;
 
 namespace CouponRestAPI.Data
 {
     public class DynamoCouponRepo : ICouponRepo
     {
-        private readonly CouponService _service;
+        private readonly IDynamoDBServices _service;
 
         //constructor
-        public DynamoCouponRepo(CouponService service)
+        public DynamoCouponRepo(IDynamoDBServices dynamoSvc)
         {
-            _service = service;
+            this._service = dynamoSvc;
             
         }
 
@@ -36,7 +37,7 @@ namespace CouponRestAPI.Data
                 throw new ArgumentNullException(nameof(coupon));
             }
 
-            await _service.Delete(coupon.Id);
+            await _service.Delete(coupon);
         }
 
         public async Task<IEnumerable<Coupon>> GetAllCoupons()
@@ -61,7 +62,7 @@ namespace CouponRestAPI.Data
                 throw new ArgumentNullException(nameof(coupon));
             }
 
-            return await _service.Update(coupon);
+            return await _service.Update(coupon.Id, coupon);
         }
     }
 }
