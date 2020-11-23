@@ -78,3 +78,5 @@ D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponR
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.pdb
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.genruntimeconfig.cache
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\aws-beanstalk-tools-defaults.json
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.csprojAssemblyReference.cache

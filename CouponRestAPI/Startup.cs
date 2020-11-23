@@ -54,7 +54,6 @@ namespace CouponRestAPI
             //use MongoCouponRepo 
            // services.AddScoped<ICouponRepo, MongoCouponRepo>();
 
-
             //use DynamoCouponRepo 
             services.AddScoped<ICouponRepo, DynamoCouponRepo>();
             //inject AWS services 
