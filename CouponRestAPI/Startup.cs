@@ -18,6 +18,7 @@ using Newtonsoft.Json.Serialization;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Amazon.DynamoDBv2;
 
 namespace CouponRestAPI
 {
@@ -51,7 +52,15 @@ namespace CouponRestAPI
             //services.AddScoped<ICouponRepo, MockCouponRepo>();
 
             //use MongoCouponRepo 
-            services.AddScoped<ICouponRepo, MongoCouponRepo>();
+           // services.AddScoped<ICouponRepo, MongoCouponRepo>();
+
+            //use DynamoCouponRepo 
+            services.AddScoped<ICouponRepo, DynamoCouponRepo>();
+            //inject AWS services 
+            services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
+            services.AddAWSService<IAmazonDynamoDB>();
+            services.AddScoped<IDynamoDBServices, CouponService>();
+
 
             services.AddSwaggerGen(c =>
             {
@@ -59,7 +68,7 @@ namespace CouponRestAPI
                 {
                     Title = "CouponAPI",
                     Version = "v1",
-                    Description = "A simple coupon rest api",
+                    Description = "COMP306GroupProject- Coupon Api By Liping Wu and Xinglong Lu",
                 });
             });
 
@@ -87,6 +96,8 @@ namespace CouponRestAPI
                 config.AddPolicy(Policies.Admin, Policies.AdminPolicy());
                 config.AddPolicy(Policies.User, Policies.UserPolicy());
             });
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -109,6 +120,7 @@ namespace CouponRestAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
           
             //app.UseHttpsRedirection();
 

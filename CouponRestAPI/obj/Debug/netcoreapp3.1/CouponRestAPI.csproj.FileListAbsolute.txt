@@ -19,6 +19,10 @@ D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponR
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\CouponRestAPI.pdb
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\AWSSDK.DynamoDBv2.dll
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\AWSSDK.Extensions.NETCore.Setup.dll
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\AWSSDK.SecurityToken.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\DnsClient.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
@@ -74,4 +78,5 @@ D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponR
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.dll
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.pdb
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.genruntimeconfig.cache
+D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\bin\Debug\netcoreapp3.1\aws-beanstalk-tools-defaults.json
 D:\CentennialWu\2020Fall\COMP306APICloud\Labs\groupproject\CouponRestAPI\CouponRestAPI\obj\Debug\netcoreapp3.1\CouponRestAPI.csprojAssemblyReference.cache
